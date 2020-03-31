@@ -20,10 +20,8 @@ public class Square extends Figure {
 
     @Override
     public String toString() {
-        return "Square{" +
-                "name='" + name + '\'' +
-                "area='" + area() + '\'' +
-                "} " + super.toString();
+        return String.format(
+                "Square (name = %s, area = %2f)", this.name, area());
     }
 
     @Override

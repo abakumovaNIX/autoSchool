@@ -20,10 +20,8 @@ public class Circle extends Figure {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "name='" + name + '\'' +
-                "area='" + area() + '\'' +
-                "} " + super.toString();
+        return String.format(
+                "Circle (name = %s, area = %2f)", this.name, area());
     }
 
     @Override
