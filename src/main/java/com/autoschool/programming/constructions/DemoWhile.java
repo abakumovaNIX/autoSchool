@@ -8,7 +8,7 @@ public class DemoWhile {
 
     public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { 
         eighth();
         ninth();
         tenth();
@@ -44,9 +44,9 @@ public class DemoWhile {
     }
 
     private static void eleventh() {
-        int i = 10, j;
+        int i = 10;
         while (i > 0) {
-            j = 10;
+            int j = 10;
             while (j > 0) {
                 System.out.print("S");
                 j--;
@@ -57,9 +57,9 @@ public class DemoWhile {
     }
 
     private static void twelfth() {
-        int i = 1, j;
+        int i = 1;
         while (i <= 10) {
-            j = 1;
+            int j = 1;
             while (j <= 10) {
                 System.out.print(i * j + " ");
                 j++;

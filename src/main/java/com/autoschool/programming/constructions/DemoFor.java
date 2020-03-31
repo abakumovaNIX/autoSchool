@@ -26,10 +26,9 @@ public class DemoFor {
     }
 
     private static void fourteenth() throws IOException {
-        int i, j;
         System.out.println("Enter height and width");
-        i = Integer.parseInt(reader.readLine());
-        j = Integer.parseInt(reader.readLine());
+        int i = Integer.parseInt(reader.readLine());
+        int j = Integer.parseInt(reader.readLine());
 
         for (; i > 0; i--) {
             for (int t = j; t > 0; t--) {
@@ -40,13 +39,11 @@ public class DemoFor {
     }
 
     private static void fifteenth() {
-        int i = 11, j = 1, k = 0;
-        for (; i > 0; i--) {
-            for (int t = j; t <= k + 1; t++) {
-                System.out.print("8");
+        for (int i = 0; i <= 10; i++) {
+            for (int j = i; j > 0; j--) {
+                System.out.print("8 ");
             }
             System.out.println();
-            k++;
         }
     }
 

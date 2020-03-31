@@ -98,28 +98,21 @@ public class DemoIf {
         int i = 7;
         Random random = new Random();
         int secret = random.nextInt(20 + 1);
-        System.out.println(secret);
-        System.out.println("Enter number to guess");
-        int userNumber = Integer.parseInt(reader.readLine());
 
-        if (userNumber == secret) {
-            System.out.println("Guessed on first try");
-        } else {
-            for (; i > 0; --i) {
-                if (userNumber > secret) {
-                    System.out.println("More than secret. Attempts left: " + i);
-                    userNumber = Integer.parseInt(reader.readLine());
-                } else if (userNumber < secret) {
-                    System.out.println("Less than secret. Attempts left " + i);
-                    userNumber = Integer.parseInt(reader.readLine());
-                } else {
-                    System.out.println("Win");
-                    break;
-                }
+        System.out.println("Enter number to guess");
+        for (; i >= 0; --i) {
+            int userNumber = Integer.parseInt(reader.readLine());
+            if (userNumber > secret) {
+                System.out.println("More than secret. Attempts left: " + i);
+            } else if (userNumber < secret) {
+                System.out.println("Less than secret. Attempts left " + i);
+            } else {
+                System.out.println("Win");
+                break;
             }
-            if (i == 0) {
-                System.out.println("Lose");
-            }
+        }
+        if (i < 0) {
+            System.out.println("Lose");
         }
     }
 }
