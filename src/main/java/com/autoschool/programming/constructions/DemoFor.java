@@ -6,12 +6,14 @@ import java.io.InputStreamReader;
 
 public class DemoFor {
 
-    public static void main(String[] args) throws InterruptedException {
-        //thirteenth();
-        //fourteenth();
-        //fifteenth();
-        //sixteenth();
-        //seventeenth();
+    public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void main(String[] args) throws InterruptedException, IOException {
+        thirteenth();
+        fourteenth();
+        fifteenth();
+        sixteenth();
+        seventeenth();
         eighteenth();
     }
 
@@ -23,20 +25,14 @@ public class DemoFor {
         }
     }
 
-    private static void fourteenth() {
-        int i = 0, j = 0, temp = 0;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            System.out.println("Enter height and width");
-            i = Integer.parseInt(reader.readLine());
-            j = Integer.parseInt(reader.readLine());
-            temp = j;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private static void fourteenth() throws IOException {
+        int i, j;
+        System.out.println("Enter height and width");
+        i = Integer.parseInt(reader.readLine());
+        j = Integer.parseInt(reader.readLine());
 
         for (; i > 0; i--) {
-            j = temp;
-            for (; j > 0; j--) {
+            for (int t = j; t > 0; t--) {
                 System.out.print("8");
             }
             System.out.println();
@@ -44,10 +40,9 @@ public class DemoFor {
     }
 
     private static void fifteenth() {
-        int i = 11, j = 1, temp = j, k = 0;
+        int i = 11, j = 1, k = 0;
         for (; i > 0; i--) {
-            j = temp;
-            for (; j <= k + 1; j++) {
+            for (int t = j; t <= k + 1; t++) {
                 System.out.print("8");
             }
             System.out.println();
@@ -64,14 +59,10 @@ public class DemoFor {
         }
     }
 
-    private static void seventeenth() {
+    private static void seventeenth() throws IOException {
         String name = "";
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            System.out.println("Enter name");
-            name = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Enter name");
+        name = reader.readLine();
 
         for (int i = 0; i < 10; i++) {
             System.out.println(name + " loves me");
@@ -83,5 +74,6 @@ public class DemoFor {
             System.out.println(i);
             Thread.sleep(100);
         }
+        System.out.println("Boom");
     }
 }

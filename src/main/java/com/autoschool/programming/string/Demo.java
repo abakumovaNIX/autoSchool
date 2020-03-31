@@ -31,7 +31,7 @@ public class Demo {
         } else {
             System.out.println("Middle -");
         }
-        System.out.println("First " + s.charAt(s.length() - 1));
+        System.out.println("Last " + s.charAt(s.length() - 1));
     }
 
     private static void beforeDot(String s) {

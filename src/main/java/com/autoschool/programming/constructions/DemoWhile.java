@@ -6,7 +6,9 @@ import java.io.InputStreamReader;
 
 public class DemoWhile {
 
-    public static void main(String[] args) {
+    public static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+    public static void main(String[] args) throws IOException {
         eighth();
         ninth();
         tenth();
@@ -30,16 +32,10 @@ public class DemoWhile {
         }
     }
 
-    private static void tenth() {
-        String s = "";
-        int n = 0;
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            System.out.println("Enter string and number of repeats");
-            s = reader.readLine();
-            n = Integer.parseInt(reader.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private static void tenth() throws IOException {
+        System.out.println("Enter string and number of repeats");
+        String s = reader.readLine();
+        int n = Integer.parseInt(reader.readLine());
 
         while (n > 0) {
             System.out.println(s);
@@ -48,7 +44,7 @@ public class DemoWhile {
     }
 
     private static void eleventh() {
-        int i = 10, j = 10;
+        int i = 10, j;
         while (i > 0) {
             j = 10;
             while (j > 0) {
@@ -61,7 +57,7 @@ public class DemoWhile {
     }
 
     private static void twelfth() {
-        int i = 1, j = 1;
+        int i = 1, j;
         while (i <= 10) {
             j = 1;
             while (j <= 10) {

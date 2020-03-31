@@ -11,7 +11,7 @@ public class Demo {
     }
 
     private static void division(int q, int w) {
-        System.out.println("q / w = " + q / w + " mod " + q % w);
+        System.out.println(String.format("q / w =  %d mod %d", q / w, q % w));
     }
 
     private static void sumOfDigits(int n) {
@@ -33,6 +33,6 @@ public class Demo {
         c = a + b + c;
         b = tempC - a;
         a += tempB;
-        System.out.println("a " + a + " b " + b + " c " + c);
+        System.out.println(String.format("%d %d %d", a, b, c));
     }
 }
