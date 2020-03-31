@@ -21,7 +21,7 @@ public class Square extends Figure {
     @Override
     public String toString() {
         return String.format(
-                "Square (name = %s, area = %2f)", this.name, area());
+                "Square (name = %s, area = %2f)", name, area());
     }
 
     @Override

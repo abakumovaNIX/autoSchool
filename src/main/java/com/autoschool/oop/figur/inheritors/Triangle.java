@@ -41,7 +41,7 @@ public class Triangle extends Figure {
     @Override
     public String toString() {
         return String.format(
-                "Triangle (name = %s, area = %2f)", this.name, area());
+                "Triangle (name = %s, area = %2f)", name, area());
     }
 
     @Override
