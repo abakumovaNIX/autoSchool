@@ -60,6 +60,6 @@ public class Demo {
         });
 
         System.out.println();
-        list.stream().sorted().collect(Collectors.toList()).forEach(System.out::println);
+        list.stream().sorted().forEach(System.out::println);
     }
 }
