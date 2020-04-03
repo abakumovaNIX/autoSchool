@@ -22,6 +22,11 @@ public class ContainsStringIgnoringCaseMatcher extends TypeSafeMatcher<String> {
         description.appendText("string (ignore case)");
     }
 
+    @Override
+    protected void describeMismatchSafely(String item, Description mismatchDescription) {
+        super.describeMismatchSafely(item, mismatchDescription);
+    }
+
     public static Matcher<String> containsStringIgnoringCase(String substring) {
         return new ContainsStringIgnoringCaseMatcher(substring);
     }

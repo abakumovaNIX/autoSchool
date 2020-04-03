@@ -6,7 +6,7 @@ import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 import org.openqa.selenium.WebElement;
 
-import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class HasTextMatcher extends TypeSafeMatcher<WebElement> {
 
@@ -17,18 +17,27 @@ public class HasTextMatcher extends TypeSafeMatcher<WebElement> {
     }
 
     @Override
+    protected void describeMismatchSafely(WebElement item, Description mismatchDescription) {
+        mismatchDescription.
+                appendText("text of element ").
+                appendValue(item).
+                appendText(" was ").
+                appendValue(item.getText());
+    }
+
+    @Override
     protected boolean matchesSafely(WebElement webElement) {
         return textMatcher.matches(webElement.getText());
     }
 
     @Override
     public void describeTo(Description description) {
-        description.appendText("webЕlement has text");
+        description.appendText("webЕlement has text").appendDescriptionOf(textMatcher);
     }
 
     @Factory
     public static Matcher<WebElement> hasText(String s) {
-        return new HasTextMatcher(containsString(s));
+        return new HasTextMatcher(equalTo(s));
     }
 
     @Factory
