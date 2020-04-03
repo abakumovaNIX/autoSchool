@@ -4,12 +4,11 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
-public class ContainsStringIgnoringCase extends TypeSafeMatcher<String>{
+public class ContainsStringIgnoringCaseMatcher extends TypeSafeMatcher<String> {
 
-   private String substring;
+    private String substring;
 
-    public ContainsStringIgnoringCase(String substring) {
-        super();
+    public ContainsStringIgnoringCaseMatcher(String substring) {
         this.substring = substring;
     }
 
@@ -24,6 +23,6 @@ public class ContainsStringIgnoringCase extends TypeSafeMatcher<String>{
     }
 
     public static Matcher<String> containsStringIgnoringCase(String substring) {
-        return new ContainsStringIgnoringCase(substring);
+        return new ContainsStringIgnoringCaseMatcher(substring);
     }
 }
