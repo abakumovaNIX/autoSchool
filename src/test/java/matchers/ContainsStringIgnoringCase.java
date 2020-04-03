@@ -1,5 +1,6 @@
 package matchers;
 
+import org.hamcrest.TypeSafeMatcher;
 import org.hamcrest.core.SubstringMatcher;
 
 public class ContainsStringIgnoringCase extends SubstringMatcher {
@@ -8,7 +9,7 @@ public class ContainsStringIgnoringCase extends SubstringMatcher {
         super(substring);
     }
 
-    public static SubstringMatcher containsStringIgnoringCase(String substring) {
+    public static TypeSafeMatcher containsStringIgnoringCase(String substring) {
         return new ContainsStringIgnoringCase(substring);
     }
 
